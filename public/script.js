@@ -11,7 +11,7 @@ let count = 0;
 let previousExp;
 
 num = Math.floor(Math.random() * 5);
-document.getElementById("video").innerHTML = `<iframe id="video" width="600" height="315" src=${urls[num]} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>`
+document.getElementById("video").src = urls[num]
 
 Promise.all([
     log.innerText = "Loading models...",
