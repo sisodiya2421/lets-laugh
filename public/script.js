@@ -10,7 +10,7 @@ const urls = ["https://www.youtube.com/embed/wU4DgHHwVCc",
 let count = 0;
 let previousExp;
 
-num = Math.floor(Math.random() * 5);
+num = Math.floor(Math.random() * urls.length);
 document.getElementById("video").src = urls[num]
 
 Promise.all([
