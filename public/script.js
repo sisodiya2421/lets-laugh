@@ -36,7 +36,7 @@ video.addEventListener('play', () => {
                     count++;
                     counter.innerText = `You've smiled ${count} times`;
                 }
-                log.innerText = "Smiling face detected!";
+                log.innerText = "smiling face detected! 😉";
                 previousExp = true;
             }
             else {
@@ -49,5 +49,4 @@ video.addEventListener('play', () => {
             log.innerText = "Can't identify your face 😕";
         }
     }, 500);
-
 });
