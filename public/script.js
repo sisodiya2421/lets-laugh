@@ -2,6 +2,7 @@ const video = document.querySelector('video');
 const iframe = document.querySelector('iframe');
 const log = document.querySelector('.log');
 const counter = document.querySelector('.counter');
+const sticker = document.getElementById("sticker");
 const urls = ["https://www.youtube.com/embed/wU4DgHHwVCc",
                 "https://www.youtube.com/embed/FIxYCDbRGJc",
                 "https://www.youtube.com/embed/fa-0MizbELk",
@@ -10,6 +11,9 @@ const urls = ["https://www.youtube.com/embed/wU4DgHHwVCc",
 let count = 0;
 let previousExp;
 
+const welcome = "https://media.giphy.com/media/mFAUFeIfT5LYGkzeR4/giphy.gif";
+const sticker_urls = ["https://media.giphy.com/media/l4vzAUZ9UMYtQUOKNF/giphy.gif"]
+
 num = Math.floor(Math.random() * urls.length);
 document.getElementById("video").src = urls[num]
 
@@ -17,6 +21,7 @@ Promise.all([
     log.innerText = "Loading models...",
     faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
     faceapi.nets.faceExpressionNet.loadFromUri('./models'),
+    sticker.src = welcome,
     log.innerText = "Models loaded successfully!",
 ]).then(startVideo);
 
