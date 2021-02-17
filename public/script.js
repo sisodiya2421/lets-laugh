@@ -25,7 +25,6 @@ const sticker_urls = ["https://media.giphy.com/media/l4vzAUZ9UMYtQUOKNF/giphy.gi
                         "https://media.giphy.com/media/20O0nOHdehJhIQ5GGN/giphy.gif"]
 
 num = urls.length - Math.floor(Math.random() * (urls.length) + 1);
-console.log(num);
 document.getElementById("video").src = urls[num]
 Promise.all([
     log.innerText = "Loading models...",
