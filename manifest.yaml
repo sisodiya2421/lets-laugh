@@ -1,5 +1,4 @@
----
 applications:
- - name: lets-laugh
-   random-route: true
-   memory: 256M
+- name: lets-laugh
+  random-route: true
+  memory: 256M
