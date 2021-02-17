@@ -1,4 +1,3 @@
-require('newrelic');
 const video = document.querySelector('video');
 const iframe = document.querySelector('iframe');
 const log = document.querySelector('.log');
