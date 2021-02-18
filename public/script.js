@@ -26,6 +26,17 @@ const sticker_urls = ["https://media.giphy.com/media/l4vzAUZ9UMYtQUOKNF/giphy.gi
 
 num = urls.length - Math.floor(Math.random() * (urls.length) + 1);
 document.getElementById("video").src = urls[num]
+
+function randomize() {
+    new_num = urls.length - Math.floor(Math.random() * (urls.length) + 1);
+    if (new_num != num){
+        document.getElementById("video").src = urls[new_num];
+    }
+    else {
+        randomize();
+    }
+  };
+
 Promise.all([
     log.innerText = "Loading models...",
     faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
