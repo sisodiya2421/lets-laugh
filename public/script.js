@@ -52,6 +52,18 @@ function startVideo() {
     );
 }
 
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+unique_id = makeid(8);
+
 video.addEventListener('play', () => {
     setInterval(async () => {
         const detections = await faceapi.detectSingleFace(video, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions();
@@ -60,7 +72,7 @@ video.addEventListener('play', () => {
                 if (!previousExp) {
                     count++;
                     counter.innerText = `You've smiled ${count} times`;
-                    newrelic.addPageAction('Times_smiled');
+                    newrelic.addPageAction('Times_smiled', {'unique_id': unique_id, 'times_smiled': count});
                     stickers_num = sticker_urls.length - Math.floor(Math.random() * (sticker_urls.length) + 1);
                     sticker.src = sticker_urls[stickers_num];
                     $("#sticker").fadeIn();
