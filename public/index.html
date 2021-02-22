@@ -31,7 +31,7 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
                     <p>Watch funny videos and laugh out loud! 🤣</p>
                 </div>
                 <div class="d-flex justify-content-center" id="play_wrapper">
-                    <button type="button" class="btn text-white btn-secondary" onclick="randomize()">Randomize Video</button>
+                    <button type="button" class="btn text-white btn-secondary" id="randomize" onclick="randomize()">Randomize Video</button>
                 </div>
             </main>
         </div>
@@ -52,5 +52,10 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./api/face-api.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('randomize').addEventListener('click',function (e) {
+            newrelic.addPageAction('clickedRandomize');
+        })
+    </script>
 </body>
 </html>

@@ -60,6 +60,7 @@ video.addEventListener('play', () => {
                 if (!previousExp) {
                     count++;
                     counter.innerText = `You've smiled ${count} times`;
+                    newrelic.addPageAction('Times_smiled');
                     stickers_num = sticker_urls.length - Math.floor(Math.random() * (sticker_urls.length) + 1);
                     sticker.src = sticker_urls[stickers_num];
                     $("#sticker").fadeIn();
